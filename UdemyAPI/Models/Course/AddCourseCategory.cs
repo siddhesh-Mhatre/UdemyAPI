@@ -12,18 +12,18 @@ namespace UdemyAPI.Models.Course
 
         public string Level { get; set; }
 
-        public string CourseCategoryName { get; set; }
+        public string InstructorName { get; set; }
 
         public string Thumbnail { get;set; }
 
-        public decimal Price {  get; set; }
+        public double Price {  get; set; }
 
-        public DateTime CreatedAt { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+        public string CreatedAt { get; set; } = DateTime.Now.ToString("dd-MM-yyyy");
 
         public string? Tag { get; set; }
 
 
-
+       public string Duration { get; set; }
 
     }
 }

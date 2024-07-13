@@ -70,5 +70,17 @@ namespace UdemyAPI.Service
                           .ToList();
             return data;
         }
+
+        public void AddQuizes(Quiz quiz)
+        {
+            db.quizs.Add(quiz);
+            db.SaveChanges();
+        }
+
+        public List<Quiz> GetQuizs()
+        {
+            var data = db.quizs.ToList();
+            return data;
+        }
     }
 }

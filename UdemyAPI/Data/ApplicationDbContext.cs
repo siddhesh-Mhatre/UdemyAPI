@@ -14,5 +14,7 @@ namespace UdemyAPI.Data
        public DbSet<User> Users { get; set; }
        public DbSet<AddCourseCategory> addCourseCategories { get; set; }
        public DbSet<AddCourseContent> addCourseContents { get; set; }
+
+       public DbSet<Quiz> quizs { get; set; }
     }
 }

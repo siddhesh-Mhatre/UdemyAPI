@@ -18,7 +18,7 @@ namespace UdemyAPI.Controllers
 
         [HttpPost]
         [Route("AddCategory")]
-        public IActionResult AddnewCategorey([FromForm] AddCourseCategory cate)
+        public IActionResult AddnewCategorey( AddCourseCategory cate)
         {
             repo.CreateCategoreyCourse(cate);
             return Ok("Categorey Added sucessfully");
@@ -26,7 +26,7 @@ namespace UdemyAPI.Controllers
 
         [HttpPost]
         [Route("AddContent")]
-        public IActionResult AddContent([FromForm] AddCourseContent cont)
+        public IActionResult AddContent( AddCourseContent cont)
         {
             repo.AddContentCourse(cont);
             return Ok("Content Added sucessfully");
@@ -40,7 +40,21 @@ namespace UdemyAPI.Controllers
             return Ok(data);
         }
 
+        [HttpPost]
+        [Route("CreateQuizes")]
+        public IActionResult CreateOwnQuiz(Quiz quiz)
+        {
+            repo.AddQuizes(quiz);
+            return Ok("Quiz Added sucessfully");
+        }
 
+        [HttpGet]
+        [Route("GetAllQuiz")]
+        public IActionResult GetQuizes()
+        {
+            var data = repo.GetQuizs();
+            return Ok(data);
+        }
 
     }
 }
